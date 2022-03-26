@@ -1,0 +1,9 @@
+@import "./_extends.scss";
+
+.search{display: flex; gap: 24px; 
+  img{align-self: flex-start;}
+  //input{text-transform: capitalize;}
+  @media(max-width:550px){ gap:12px;
+    input{font-size: 15px;}
+  }
+}

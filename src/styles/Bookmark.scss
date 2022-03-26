@@ -1,0 +1,19 @@
+@import "./_extends.scss";
+
+.bookmark{position: absolute; top:16px; right:24px; height: 32px; width: 32px; display: grid; place-items: center; cursor: pointer; @extend %border-100; background-color: rgba(#10141E, 0.5); transition: background-color 0.2s; z-index: 4;
+    &:hover{background-color: white;
+        svg{
+            path{stroke:black; transition: fill 0.3s, stroke 0.3s;}
+            &.active{
+                path{fill: black;}
+            }
+        }
+    }
+    &:hover{
+        &+.play-button{opacity: 1;
+            .play-button__cta{transform: translateY(0px);}
+        }
+    }
+    @media(max-width:960px){right:16px;}
+    @media(max-width:620px){right:10px !important; top:10px;}
+}

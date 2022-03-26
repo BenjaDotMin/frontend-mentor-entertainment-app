@@ -1,0 +1,14 @@
+.play-button{position: absolute; top:0; right:0; bottom:0; left:0; display: grid; place-items: center; background-color: rgba(black, 0.5); z-index: 2; opacity: 0; transition:opacity .2s;
+  &__cta{padding: 0; border: none; display: flex; align-items: center; gap:20px; background-color: rgba(white, 0.25); border-radius: 30px; padding: 9px 16px; z-index: 3; cursor: pointer; transition: .2s; transform: translateY(3px);
+    label{font-size: 1.8rem; font-weight: 500; cursor: pointer;}
+    svg{fill:white; transition: fill 0.2s;}
+    @media(max-width:550px){gap:8px; padding: 7px 12px;
+      label{font-size: 14px;}
+      svg{width: 24px;}
+    }
+    &:hover{svg{fill: #FC4747;}}
+  }
+  &:hover{opacity: 1;
+    .play-button__cta{transform: translateY(0px);}
+  }
+}

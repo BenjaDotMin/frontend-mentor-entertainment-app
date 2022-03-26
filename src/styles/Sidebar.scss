@@ -1,0 +1,36 @@
+@import "./_colors.scss";
+@import "./_extends.scss";
+
+.sidebar{position: fixed; left:32px; top:32px; bottom:32px; width:96px; background-color: $grey; @extend %border-20; padding:35px 0 32px; text-align: center; display: flex; align-items: center; flex-direction: column; z-index: 3;
+    a{display: inline-block;
+        &:last-child{
+            svg{margin-left: 2px;}
+        }      
+    }
+    nav{display: grid; gap:40px; justify-content: center; margin-top: 71px; margin-left: -1px;
+        svg{fill: $blue; transition: fill 0.2s; cursor: pointer; display: block;
+            &:hover{fill: $red;}
+            &.active{fill:$white;}                 
+        }
+    }
+    .user{flex: 1; display: flex; justify-content: center; align-items: flex-end;
+        .user-image{@extend %border-100; border: 1px solid $white; width: 40px; height: 40px;}
+    }
+    @media(max-width:768px){position:static; width: auto; flex-direction: row; justify-content: space-between; padding: 16px 25px; margin-bottom: 25px;
+        nav{display: flex; margin-top: 0;}
+        .user{flex:none;}
+    }
+    @media(max-width:768px){border-radius:0;}
+    @media(max-width:550px){position: fixed; right: 0; left: 0; bottom: auto; top: 0; margin-bottom: 0;
+        .user{
+            .user-image{height: 24px; width: 24px;}
+        }
+        .logo{width: 25px;}        
+    }
+    @media(max-width:440px){        
+        nav{gap:24px;
+            svg{width: 16px;}
+        }
+    }
+}
+

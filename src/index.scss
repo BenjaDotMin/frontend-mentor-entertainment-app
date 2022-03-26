@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
+@import "./styles/extends";
+
+body {margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+
+//generic custom font
+html, button, input{font-family: 'Outfit', sans-serif; font-weight: 300; color:white;}
+
+*{box-sizing: border-box;}
+html{font-size: 62.5%; background-color: #10141E;}
+body{margin: 0;}
+p, h1, h2, h3, h4, h5, h6{margin: 0; font-weight: 300;}
+h1{@extend %title-l;}
+h2{@extend %title-m;}
+h3{@extend %title-s;}
+p{@extend %body-m;}
+button{@extend %button;}
+a{text-decoration: none;}
+ul{margin: 0; padding: 0;
+  li{list-style: none;}
+}
+#app {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+main{padding-top: 64px; overflow: hidden;
+  .container{max-width: 1440px; margin: 0 auto; padding: 0 36px 150px 164px;
+    @media(max-width:768px){padding: 0 0 100px;}
+    @media(max-width:550px){padding: 0 25px 100px;;}
+  }
+  img{display: block; max-width: 100%;}
+  input{border:none; padding:0; background-color: transparent; @extend %title-m; @extend %placeholder; width:100%; max-width: 484px; margin-top: 1px; padding-bottom: 15px; border-bottom: 1px solid transparent;
+    &:focus-visible{outline: none;}
+    &:focus{border-color:  #5A698F;}
+  }
+  @media(max-width:768px){padding: 25px;}
+  @media(max-width:550px){padding: 80px 0 0 0;}
+}
+.section-title{@extend %title-l; margin-top: 40px; display: block;
+  &.st{margin-top: 19px;}
+}
+.cards{
+  &.rec{display: grid; gap:32px 40px; grid-template-columns: repeat(4, 1fr); margin-top: 32px; 
+    @media(max-width:1200px){gap:30px; grid-template-columns: repeat(3, 1fr);}
+    @media(max-width:900px){grid-template-columns: repeat(2, 1fr);}
+    @media(max-width:700px){gap: 30px 16px;}
+    @media(max-width:550px){margin-top: 14px;}
+    @media(max-width:350px){grid-template-columns: 1fr;}
+  }
+  &.sb{margin-bottom: 43px;}
+}
